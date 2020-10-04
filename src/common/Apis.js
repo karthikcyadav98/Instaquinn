@@ -1,1 +1,1 @@
-export const api_url = 'https://quinncareapidev.azurewebsites.net/api/assignment/posts';
+export const api_url = 'https://quinncareapi.azurewebsites.net/api/assignment/posts';

@@ -6,7 +6,7 @@ import moment from 'moment';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-const Feeditem = ({item}) => {
+const Feeditem = ({item, isOnline}) => {
 	const images = item.Images;
 
 	return (
@@ -29,7 +29,12 @@ const Feeditem = ({item}) => {
 				horizontal={true}
 				keyExtractor={(item, index) => index.toString()}
 				data={images}
-				renderItem={({item}) => <Card.Cover style={styles.coverImage} source={{uri: item.ImageUrl}} />}
+				renderItem={({item}) => (
+					<Card.Cover
+						style={styles.coverImage}
+						source={isOnline ? {uri: item.ImageUrl} : require('../../assets/loading.png')}
+					/>
+				)}
 				getItemLayout={(data, index) => ({
 					length: SCREEN_WIDTH,
 					offset: SCREEN_WIDTH * index,
@@ -82,6 +87,7 @@ const styles = StyleSheet.create({
 		marginRight: 10
 	},
 	coverImage: {
+		marginBottom: Platform.OS === 'android' ? 5 : 7,
 		marginTop: 10,
 		height: SCREEN_HEIGHT * 0.5,
 		resizeMode: 'contain',

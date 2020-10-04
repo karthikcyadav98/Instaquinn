@@ -15,7 +15,7 @@ const BottomNav = () => {
 				name="Feedslist"
 				options={{
 					tabBarColor: '#25527A',
-					tabBarLabel: 'Feedslist',
+					tabBarLabel: 'Feeds',
 					tabBarIcon: ({color}) => <Icon name="home" color={color} size={26} />
 				}}
 			>
@@ -26,7 +26,7 @@ const BottomNav = () => {
 				name="CalendarList"
 				options={{
 					tabBarColor: '#25527A',
-					tabBarLabel: 'CalendarList',
+					tabBarLabel: 'Calendar',
 					tabBarIcon: ({color}) => <Icon name="calendar" color={color} size={26} />
 				}}
 			>
