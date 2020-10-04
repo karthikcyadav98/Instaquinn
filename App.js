@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import Navigation from './src/Navigation/Navigation';
 import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
+import ErrorBoundary from './src/Error/ErrorBoundary';
 
 const theme = {
 	...DefaultTheme,
@@ -21,11 +22,13 @@ const App = () => {
 	}, []);
 
 	return (
-		<NavigationContainer>
-			<PaperProvider style={{flex: 1}} theme={theme}>
-				<Navigation />
-			</PaperProvider>
-		</NavigationContainer>
+		<ErrorBoundary>
+			<NavigationContainer>
+				<PaperProvider style={{flex: 1}} theme={theme}>
+					<Navigation />
+				</PaperProvider>
+			</NavigationContainer>
+		</ErrorBoundary>
 	);
 };
 
