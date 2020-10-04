@@ -21,7 +21,7 @@ export default Header;
 
 const styles = StyleSheet.create({
 	logo: {
-		width: Platform.OS === 'android' ? '13%' : '13%',
+		width: '13%',
 		height: Platform.OS === 'android' ? '85%' : '100%'
 	},
 	title: {
